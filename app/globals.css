@@ -90,8 +90,8 @@
 
   @media (min-width: 1024px) {
     :root {
-      --card-headline-margin-top: 64px;
-      --card-link-margin-top: 80px;
+      --card-headline-margin-top: 32px;
+      --card-link-margin-top: 24px;
     }
   }
 
