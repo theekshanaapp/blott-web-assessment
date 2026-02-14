@@ -1,0 +1,214 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Design System CSS Variables - Generated from tokens.ts */
+@layer base {
+  :root {
+    /* Spacing Tokens */
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 24px;
+    --spacing-xl: 32px;
+    --spacing-2xl: 48px;
+    --spacing-3xl: 64px;
+    --spacing-4xl: 80px;
+    --spacing-5xl: 128px;
+    --spacing-6xl: 176px;
+
+    /* Typography Tokens */
+    --font-size-xs: 14px;
+    --font-size-sm: 15px;
+    --font-size-base: 18px;
+    --font-size-md: 20px;
+    --font-size-lg: 22px;
+    --font-size-xl: 24px;
+    --font-size-2xl: 32px;
+    --font-size-3xl: 40px;
+    --font-size-4xl: 70px;
+    --font-size-5xl: 80px;
+
+    --line-height-tight: 100%;
+    --line-height-normal: 130%;
+    --line-height-relaxed: 150%;
+    --line-height-mobile: 47px;
+    --line-height-desktop: 88%;
+
+    --letter-spacing-tight: -0.06em;
+    --letter-spacing-normal: -0.04em;
+    --letter-spacing-wide: -0.01em;
+    --letter-spacing-none: 0%;
+
+    /* Color Tokens */
+    --color-background-main: #000000;
+    --color-background-secondary: #0A0A0A;
+    --color-text-main: #FFFFFF;
+    --color-text-secondary: #CCCCCC;
+    --color-text-muted: #999999;
+    --color-border-default: #333333;
+    --color-border-light: #1A1A1A;
+
+    /* Border Radius Tokens */
+    --radius-none: 0px;
+    --radius-sm: 6px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+    --radius-xl: 16px;
+    --radius-full: 9999px;
+
+    /* Aspect Ratio Tokens */
+    --aspect-ratio-card: 300 / 199;
+    --aspect-ratio-square: 1 / 1;
+    --aspect-ratio-video: 16 / 9;
+    --aspect-ratio-portrait: 3 / 4;
+    --aspect-ratio-landscape: 4 / 3;
+
+    /* Animation Tokens */
+    --animation-fast: 150ms;
+    --animation-normal: 300ms;
+    --animation-slow: 500ms;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border-default;
+  }
+
+  body {
+    @apply text-main-text-color bg-background-main;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  /* Text utilities */
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  /* Aspect ratio utilities using design tokens */
+  .aspect-card {
+    aspect-ratio: var(--aspect-ratio-card, 300 / 199);
+  }
+
+  .aspect-video {
+    aspect-ratio: var(--aspect-ratio-video, 16 / 9);
+  }
+
+  .aspect-square {
+    aspect-ratio: var(--aspect-ratio-square, 1 / 1);
+  }
+
+  /* Spacing utilities using design tokens */
+  .spacing-xs {
+    gap: var(--spacing-xs);
+  }
+
+  .spacing-sm {
+    gap: var(--spacing-sm);
+  }
+
+  .spacing-md {
+    gap: var(--spacing-md);
+  }
+
+  .spacing-lg {
+    gap: var(--spacing-lg);
+  }
+
+  /* Border radius utilities using design tokens */
+  .radius-sm {
+    border-radius: var(--radius-sm);
+  }
+
+  .radius-md {
+    border-radius: var(--radius-md);
+  }
+
+  .radius-lg {
+    border-radius: var(--radius-lg);
+  }
+
+  /* Animation utilities using tokens */
+  .animate-fade-in {
+    animation: fadeIn var(--animation-normal) ease-in-out;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}
+
+/* Skeleton Shimmer Animation - Using token colors */
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+.skeleton-shimmer {
+  background: linear-gradient(
+    90deg,
+    var(--color-background-secondary) 0%,
+    rgba(255, 255, 255, 0.05) 20%,
+    rgba(255, 255, 255, 0.08) 60%,
+    var(--color-background-secondary) 100%
+  );
+  background-size: 1000px 100%;
+  animation: shimmer 2s infinite linear;
+}
+
+/* Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .skeleton-shimmer {
+    animation: none;
+    background: var(--color-background-secondary);
+  }
+}
+
+/* Focus visible styles for accessibility */
+:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
+/* Smooth scrolling for anchor links */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Prevent image auto-rotation */
+img {
+  image-orientation: from-image;
+  image-rendering: auto;
+}
