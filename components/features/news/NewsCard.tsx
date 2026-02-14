@@ -48,13 +48,13 @@ const NewsCard = memo(function NewsCard({
             <Image
               src={imageUrl}
               alt={news.headline}
-              width={cardImageConfig.width}
-              height={cardImageConfig.height}
+              fill
               className={cn(
-                "w-full h-full object-cover rounded-[6px] transition-opacity duration-300 relative z-20",
+                "object-cover rounded-[6px] transition-opacity duration-300 relative z-20",
                 imageLoading ? "opacity-0" : "opacity-100"
               )}
               priority={priority}
+              fetchPriority={priority ? "high" : "auto"}
               loading={priority ? undefined : "lazy"}
               unoptimized={imageUrl === PLACEHOLDER_IMAGE || imageError}
               onLoad={() => {
@@ -72,9 +72,8 @@ const NewsCard = memo(function NewsCard({
                 <Image
                   src={PLACEHOLDER_IMAGE}
                   alt=""
-                  width={cardImageConfig.width}
-                  height={cardImageConfig.height}
-                  className="w-full h-full object-cover rounded-[6px]"
+                  fill
+                  className="object-cover rounded-[6px]"
                   unoptimized
                 />
               </div>
@@ -97,7 +96,6 @@ const NewsCard = memo(function NewsCard({
             style={{
               fontFamily: "var(--font-roboto), 'Roboto', sans-serif",
               fontWeight: 400,
-              fontStyle: "normal",
               fontSize: "15px",
               lineHeight: "100%",
               letterSpacing: "0%",
@@ -107,15 +105,15 @@ const NewsCard = memo(function NewsCard({
             <CardLinkContainer>
               <CardLinkText>Read Article</CardLinkText>
               <CardLinkIcon>
-            <Image
-              src="/arrow.svg"
-              alt=""
-              width={24}
-              height={24}
-              className="w-full h-full"
-              unoptimized
-              aria-hidden="true"
-            />
+                <Image
+                  src="/arrow.svg"
+                  alt=""
+                  width={24}
+                  height={24}
+                  className="object-contain"
+                  unoptimized
+                  aria-hidden="true"
+                />
               </CardLinkIcon>
             </CardLinkContainer>
           </a>

@@ -54,11 +54,14 @@ const NewsList = memo(function NewsList({
             </div>
           ))
         ) : (
-          news.map((item, index) => (
-            <div key={item.id} className={getGridClass(index)} role="listitem">
-              <NewsCard news={item} priority={index < 3} />
-            </div>
-          ))
+          news.map((item, index) => {
+            const isPriority = index === 0;
+            return (
+              <div key={item.id} className={getGridClass(index)} role="listitem">
+                <NewsCard news={item} priority={isPriority} />
+              </div>
+            );
+          })
         )}
       </div>
 

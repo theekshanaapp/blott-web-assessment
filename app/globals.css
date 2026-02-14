@@ -68,38 +68,6 @@
     --animation-fast: 150ms;
     --animation-normal: 300ms;
     --animation-slow: 500ms;
-
-    /* Card spacing - mobile */
-    --card-headline-margin-top: 24px;
-    --card-link-margin-top: 16px;
-  }
-
-  @media (min-width: 640px) {
-    :root {
-      --card-headline-margin-top: 24px;
-      --card-link-margin-top: 20px;
-    }
-  }
-
-  @media (min-width: 768px) {
-    :root {
-      --card-headline-margin-top: 32px;
-      --card-link-margin-top: 24px;
-    }
-  }
-
-  @media (min-width: 1024px) {
-    :root {
-      --card-headline-margin-top: 32px;
-      --card-link-margin-top: 24px;
-    }
-  }
-
-  @media (min-width: 1366px) {
-    :root {
-      --card-headline-margin-top: 24px;
-      --card-link-margin-top: 24px;
-    }
   }
 }
 

@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter, Roboto, Roboto_Mono, Playfair_Display, Noto_Serif } from "next/font/google";
 import "./globals.css";
 
@@ -82,12 +82,6 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-  viewport: {
-    width: "device-width",
-    initialScale: 1,
-    maximumScale: 5,
-  },
-  themeColor: "#000000",
   icons: {
     icon: [
       { url: "/logo.png", type: "image/png", sizes: "32x32" },
@@ -99,6 +93,13 @@ export const metadata: Metadata = {
     shortcut: "/logo.png",
   },
   manifest: "/manifest.json",
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+  themeColor: "#000000",
 };
 
 export default function RootLayout({
