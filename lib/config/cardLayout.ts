@@ -42,10 +42,11 @@ export const cardHeadlineConfig = {
     xl: "xl:text-24",
   },
   marginTop: {
-    base: "mt-4",
+    base: "mt-8",
     sm: "sm:mt-6",
     md: "md:mt-8",
     tablet: "tablet:mt-16",
+    xl: "xl:mt-6",
   },
 } as const;
 
@@ -60,35 +61,42 @@ export const cardLinkConfig = {
   },
   lineHeight: "leading-[100%]",
   marginTop: {
-    base: "mt-4",
+    base: "mt-8",
     sm: "sm:mt-5",
     md: "md:mt-6",
     tablet: "tablet:mt-20",
+    xl: "xl:mt-6",
   },
   paddingBottom: "pb-[7px]",
   containerHeight: {
     base: "h-[28px]",
     sm: "sm:h-[30px]",
     tablet: "tablet:h-[31px]",
+    xl: "xl:h-[31px]",
   },
   gap: {
     base: "gap-2",
     sm: "sm:gap-[8px]",
     tablet: "tablet:gap-[10px]",
+    xl: "xl:gap-[10px]",
   },
   textHeight: {
     base: "h-[28px]",
     sm: "sm:h-[30px]",
     tablet: "tablet:h-[31px]",
+    xl: "xl:h-[31px]",
   },
   textFontSize: {
     base: "text-14",
     sm: "sm:text-15",
+    tablet: "tablet:text-15",
+    xl: "xl:text-15",
   },
   iconSize: {
     base: "h-[20px] w-[20px]",
     sm: "sm:h-[22px] sm:w-[22px]",
-    tablet: "tablet:h-[24px] tablet:w-6",
+    tablet: "tablet:h-[24px] tablet:w-[24px]",
+    xl: "xl:h-[24px] xl:w-[24px]",
   },
   linkWidth: {
     base: "w-24",
@@ -179,7 +187,8 @@ export function getHeadlineMarginTop(): string {
     cardHeadlineConfig.marginTop.base,
     cardHeadlineConfig.marginTop.sm,
     cardHeadlineConfig.marginTop.md,
-    cardHeadlineConfig.marginTop.tablet
+    cardHeadlineConfig.marginTop.tablet,
+    cardHeadlineConfig.marginTop.xl
   );
 }
 
@@ -204,7 +213,8 @@ export function getLinkMarginTop(): string {
     cardLinkConfig.marginTop.base,
     cardLinkConfig.marginTop.sm,
     cardLinkConfig.marginTop.md,
-    cardLinkConfig.marginTop.tablet
+    cardLinkConfig.marginTop.tablet,
+    cardLinkConfig.marginTop.xl
   );
 }
 
@@ -215,7 +225,8 @@ export function getLinkContainerHeight(): string {
   return combineResponsiveClasses(
     cardLinkConfig.containerHeight.base,
     cardLinkConfig.containerHeight.sm,
-    cardLinkConfig.containerHeight.tablet
+    cardLinkConfig.containerHeight.tablet,
+    cardLinkConfig.containerHeight.xl
   );
 }
 
@@ -226,7 +237,8 @@ export function getLinkGap(): string {
   return combineResponsiveClasses(
     cardLinkConfig.gap.base,
     cardLinkConfig.gap.sm,
-    cardLinkConfig.gap.tablet
+    cardLinkConfig.gap.tablet,
+    cardLinkConfig.gap.xl
   );
 }
 

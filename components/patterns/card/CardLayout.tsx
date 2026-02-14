@@ -61,16 +61,23 @@ export function CardLayout({ children, className, isSkeleton = false }: CardLayo
         style={{
           fontFamily: "var(--font-roboto), 'Roboto', sans-serif",
           fontWeight: 400,
+          fontStyle: "normal",
           lineHeight: "130%",
           letterSpacing: "-4%",
           wordBreak: "break-word",
           overflowWrap: "break-word",
+          marginTop: "var(--card-headline-margin-top)",
         }}
       >
         {children.headline}
       </div>
 
-      <div className={cn(getLinkMarginTop(), cardLinkConfig.paddingBottom)}>
+      <div
+        className={cn(getLinkMarginTop(), cardLinkConfig.paddingBottom)}
+        style={{
+          marginTop: "var(--card-link-margin-top)",
+        }}
+      >
         {children.link}
       </div>
     </article>
@@ -103,8 +110,11 @@ export function CardLinkText({ children, className }: CardLinkTextProps) {
         cardLinkConfig.textHeight.base,
         cardLinkConfig.textHeight.sm,
         cardLinkConfig.textHeight.tablet,
+        cardLinkConfig.textHeight.xl,
         cardLinkConfig.textFontSize.base,
         cardLinkConfig.textFontSize.sm,
+        cardLinkConfig.textFontSize.tablet,
+        cardLinkConfig.textFontSize.xl,
         className
       )}
     >
@@ -126,6 +136,7 @@ export function CardLinkIcon({ children, className }: CardLinkIconProps) {
         cardLinkConfig.iconSize.base,
         cardLinkConfig.iconSize.sm,
         cardLinkConfig.iconSize.tablet,
+        cardLinkConfig.iconSize.xl,
         className
       )}
     >

@@ -4,7 +4,7 @@ const Header = memo(function Header() {
   return (
     <header className="w-full">
       <h1
-        className="tablet:hidden uppercase text-main-text-color font-normal text-left"
+        className="md:hidden uppercase text-main-text-color font-normal text-left"
         style={{
           fontSize: "40px",
           lineHeight: "47px",
@@ -21,7 +21,7 @@ const Header = memo(function Header() {
         </div>
       </h1>
 
-      <h1 className="hidden tablet:block text-70 xl:text-80 leading-[88%] uppercase text-main-text-color">
+      <h1 className="hidden md:block text-70 xl:text-80 leading-[88%] uppercase text-main-text-color">
         <div
           className="font-helvetica-now font-normal desktop-header-line"
           style={{

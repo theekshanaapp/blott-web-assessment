@@ -155,6 +155,8 @@ const config: Config = {
     "tablet:col-span-6",
     "tablet:col-span-3",
     "tablet:col-span-4",
+    // Ensure desktop spacing classes are generated
+    "xl:mt-6",
   ],
 };
 

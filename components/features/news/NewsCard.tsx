@@ -97,6 +97,7 @@ const NewsCard = memo(function NewsCard({
             style={{
               fontFamily: "var(--font-roboto), 'Roboto', sans-serif",
               fontWeight: 400,
+              fontStyle: "normal",
               fontSize: "15px",
               lineHeight: "100%",
               letterSpacing: "0%",
@@ -109,8 +110,8 @@ const NewsCard = memo(function NewsCard({
             <Image
               src="/arrow.svg"
               alt=""
-              width={20}
-              height={20}
+              width={24}
+              height={24}
               className="w-full h-full"
               unoptimized
               aria-hidden="true"
