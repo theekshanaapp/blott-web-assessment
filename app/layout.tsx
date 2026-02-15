@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, Roboto, Roboto_Mono, Playfair_Display, Noto_Serif } from "next/font/google";
+import { Inter, Roboto, Roboto_Mono, Noto_Serif, Lora } from "next/font/google";
 import "./globals.css";
 
 const helveticaNowDisplay = Inter({
@@ -16,8 +16,10 @@ const roboto = Roboto({
   display: "swap",
 });
 
-const albra = Playfair_Display({
-  weight: ["400"],
+// Albra font - using Lora variable for serif font with weight 300 support
+// Lora has a similar elegant R shape to Albra
+const albra = Lora({
+  weight: "variable",
   subsets: ["latin"],
   variable: "--font-albra",
   display: "swap",

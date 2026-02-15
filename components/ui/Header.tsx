@@ -37,10 +37,17 @@ const Header = memo(function Header() {
           }}
         >
           <span
-            className="font-albra desktop-header-line"
+            className="desktop-header-line"
             style={{
-              letterSpacing: "-0.06em",
+              fontFamily: '"Albra", var(--font-albra), "Lora", Georgia, serif',
               fontWeight: 300,
+              fontSize: "80px",
+              lineHeight: "88%",
+              letterSpacing: "-0.06em",
+              textTransform: "uppercase",
+              fontFeatureSettings: '"liga" 1, "kern" 1',
+              WebkitFontSmoothing: "antialiased",
+              MozOsxFontSmoothing: "grayscale",
             }}
           >
             FROM

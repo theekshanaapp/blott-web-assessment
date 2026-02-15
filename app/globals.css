@@ -2,7 +2,28 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Design System CSS Variables - Generated from tokens.ts */
+@font-face {
+  font-family: "Albra";
+  src: url("/fonts/Albra-Light.woff2") format("woff2"),
+       url("/fonts/Albra-Light.woff") format("woff"),
+       url("/fonts/Albra-Light.otf") format("opentype"),
+       url("/fonts/Albra-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Albra";
+  src: url("/fonts/Albra-Regular.woff2") format("woff2"),
+       url("/fonts/Albra-Regular.woff") format("woff"),
+       url("/fonts/Albra-Regular.otf") format("opentype"),
+       url("/fonts/Albra-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 @layer base {
   :root {
     /* Spacing Tokens */

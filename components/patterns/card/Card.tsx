@@ -5,39 +5,16 @@ import { Stack } from "@/components/primitives/layout";
 import { Skeleton } from "@/components/primitives/skeleton";
 import { aspectRatios, borderRadius } from "@/lib/design-system/tokens";
 
-/**
- * Card Pattern Component
- * 
- * Generic card pattern that works for both real and loading states.
- * Uses shared CardLayout to prevent divergence.
- * 
- * Architecture:
- * - Composes primitives (Container, Stack, Skeleton)
- * - Accepts isLoading prop for skeleton state
- * - Responsive by default
- * - Fully accessible
- */
 export interface CardProps {
   children: {
     image?: ReactNode;
     content?: ReactNode;
     footer?: ReactNode;
   };
-  /**
-   * Loading state - shows skeletons
-   */
   isLoading?: boolean;
-  /**
-   * Additional className
-   */
   className?: string;
 }
 
-/**
- * Card - Generic card pattern
- * 
- * Provides consistent card structure for real and loading states.
- */
 export function Card({ children, isLoading = false, className }: CardProps) {
   return (
     <article

@@ -108,7 +108,7 @@ const config: Config = {
       },
       fontFamily: {
         "helvetica-now": ["var(--font-helvetica-now)", "Helvetica Neue", "Arial", "sans-serif"],
-        albra: ["var(--font-albra)", "Georgia", "serif"],
+        albra: ["var(--font-albra)", "'Lora'", "Georgia", "serif"],
         roboto: ["var(--font-roboto)", "Roboto", "sans-serif"],
         mono: ["var(--font-roboto-mono)", "monospace"],
         serif: ["var(--font-noto-serif)", "Noto Serif", "Georgia", "serif"],
