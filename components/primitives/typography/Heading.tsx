@@ -2,39 +2,12 @@ import { type ReactNode, type ElementType } from "react";
 import { cn } from "@/lib/utils/cn";
 import { typography } from "@/lib/design-system/tokens";
 
-/**
- * Heading Primitive
- *
- * Accessible heading component with responsive typography.
- * Uses design tokens for consistent sizing.
- *
- * Features:
- * - Semantic HTML (h1-h6)
- * - Responsive font sizes from tokens
- * - Full accessibility support
- * - Type-safe heading levels
- */
 export interface HeadingProps {
   children: ReactNode;
-  /**
-   * Heading level (h1-h6)
-   */
   level?: 1 | 2 | 3 | 4 | 5 | 6;
-  /**
-   * Size variant (uses design tokens)
-   */
   size?: "mobile" | "desktop" | "sm" | "md" | "lg" | "xl";
-  /**
-   * Font family variant
-   */
   fontFamily?: "sans" | "serif" | "mono" | "albra";
-  /**
-   * Additional className
-   */
   className?: string;
-  /**
-   * Alignment
-   */
   align?: "left" | "center" | "right";
 }
 

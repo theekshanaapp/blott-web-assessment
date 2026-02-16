@@ -1,9 +1,3 @@
-/**
- * Layout Primitives
- *
- * Atomic layout components for building UIs
- */
-
 export { Container } from "./Container";
 export { Stack } from "./Stack";
 export { Grid } from "./Grid";

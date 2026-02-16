@@ -1,19 +1,3 @@
-/**
- * Design System Tokens
- *
- * Single source of truth for all design values.
- * Used by components, Tailwind config, and CSS variables.
- *
- * Architecture:
- * - Type-safe constants
- * - CSS variable generation
- * - No magic numbers
- * - Survives redesigns (change tokens, components adapt)
- */
-
-/**
- * Spacing scale (4px base unit)
- */
 export const spacing = {
   xs: "4px",
   sm: "8px",
@@ -27,9 +11,6 @@ export const spacing = {
   "6xl": "176px",
 } as const;
 
-/**
- * Typography scale
- */
 export const typography = {
   fontSize: {
     xs: "14px",
@@ -73,9 +54,6 @@ export const typography = {
   },
 } as const;
 
-/**
- * Color palette
- */
 export const colors = {
   background: {
     main: "#000000",
@@ -92,9 +70,6 @@ export const colors = {
   },
 } as const;
 
-/**
- * Border radius
- */
 export const borderRadius = {
   none: "0px",
   sm: "6px",
@@ -104,9 +79,6 @@ export const borderRadius = {
   full: "9999px",
 } as const;
 
-/**
- * Breakpoints (for reference, prefer Container Queries)
- */
 export const breakpoints = {
   sm: "360px",
   md: "768px",
@@ -116,18 +88,12 @@ export const breakpoints = {
   "2xl": "1536px",
 } as const;
 
-/**
- * Animation durations
- */
 export const animation = {
   fast: "150ms",
   normal: "300ms",
   slow: "500ms",
 } as const;
 
-/**
- * Z-index scale
- */
 export const zIndex = {
   base: 0,
   dropdown: 1000,
@@ -138,9 +104,6 @@ export const zIndex = {
   tooltip: 1060,
 } as const;
 
-/**
- * Aspect ratios
- */
 export const aspectRatios = {
   square: "1/1",
   video: "16/9",
@@ -149,9 +112,6 @@ export const aspectRatios = {
   landscape: "4/3",
 } as const;
 
-/**
- * Type exports for TypeScript
- */
 export type Spacing = typeof spacing[keyof typeof spacing];
 export type TypographySize = typeof typography.fontSize[keyof typeof typography.fontSize];
 export type Color = typeof colors[keyof typeof colors];

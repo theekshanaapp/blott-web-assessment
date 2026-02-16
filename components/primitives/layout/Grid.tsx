@@ -1,23 +1,8 @@
 import { type ReactNode } from "react";
 import { cn } from "@/lib/utils/cn";
 
-/**
- * Grid Primitive
- *
- * Responsive grid system with intrinsic behavior.
- * Uses CSS Grid for modern layout.
- *
- * Why:
- * - Consistent grid behavior
- * - Responsive by default
- * - Type-safe column configuration
- * - Composable with other primitives
- */
 export interface GridProps {
   children: ReactNode;
-  /**
-   * Number of columns at each breakpoint
-   */
   columns?: {
     base?: number;
     sm?: number;
@@ -26,21 +11,11 @@ export interface GridProps {
     lg?: number;
     xl?: number;
   };
-  /**
-   * Gap between grid items
-   */
   gap?: "xs" | "sm" | "md" | "lg" | "xl";
-  /**
-   * Additional className
-   */
   className?: string;
-  /**
-   * HTML element to render
-   */
   as?: "div" | "section" | "main" | "ul" | "ol";
 }
 
-// Token-based gap classes (maps to Tailwind spacing scale)
 const gapClasses = {
   xs: "gap-2",      // 8px (sm token)
   sm: "gap-2",      // 8px (sm token)
@@ -49,7 +24,6 @@ const gapClasses = {
   xl: "gap-8",      // 32px (xl token)
 } as const;
 
-// Grid column classes - must use explicit classes for Tailwind JIT
 const gridColsClasses = {
   1: "grid-cols-1",
   2: "grid-cols-2",

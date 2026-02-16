@@ -1,22 +1,3 @@
-/**
- * Card Layout Configuration
- *
- * Single source of truth for NewsCard and SkeletonCard layout.
- *
- * Architecture Principle:
- * - Both components MUST use these exact values
- * - Changes here automatically sync to both components
- * - Prevents layout divergence between real and loading states
- *
- * Design System Integration:
- * - All values match Figma specifications
- * - Responsive breakpoints: sm, md, tablet, xl
- * - Maintains pixel-perfect accuracy
- */
-
-/**
- * Image container configuration
- */
 export const cardImageConfig = {
   aspectRatio: "300/199" as const,
   borderRadius: 6,
@@ -24,10 +5,6 @@ export const cardImageConfig = {
   height: 199,
 } as const;
 
-/**
- * Headline typography configuration
- * Figma specs: Roboto (sans-serif), 400, 24px, 130% line height, -4% letter spacing, Title case
- */
 export const cardHeadlineConfig = {
   fontFamily: "font-roboto",
   fontWeight: "font-normal",
@@ -42,16 +19,13 @@ export const cardHeadlineConfig = {
     xl: "xl:text-24",
   },
   marginTop: {
-    base: "mt-4",
-    sm: "sm:mt-6",
-    md: "md:mt-8",
-    tablet: "tablet:mt-16",
+    base: "mt-2",
+    sm: "sm:mt-2",
+    md: "md:mt-2",
+    tablet: "tablet:mt-2",
   },
 } as const;
 
-/**
- * Read Article link configuration
- */
 export const cardLinkConfig = {
   fontFamily: "font-roboto",
   fontSize: {
@@ -60,10 +34,11 @@ export const cardLinkConfig = {
   },
   lineHeight: "leading-[100%]",
   marginTop: {
-    base: "mt-4",
-    sm: "sm:mt-5",
-    md: "md:mt-6",
-    tablet: "tablet:mt-20",
+    base: "mt-2",
+    sm: "sm:mt-2",
+    md: "md:mt-2",
+    tablet: "tablet:mt-2",
+    xl: "xl:mt-2",
   },
   paddingBottom: "pb-[7px]",
   containerHeight: {
@@ -97,9 +72,6 @@ export const cardLinkConfig = {
   },
 } as const;
 
-/**
- * Skeleton headline configuration
- */
 export const skeletonHeadlineConfig = {
   containerMarginTop: {
     base: "mt-4",
@@ -115,9 +87,6 @@ export const skeletonHeadlineConfig = {
   lineWidths: ["w-full", "w-5/6", "w-4/6"] as const,
 } as const;
 
-/**
- * Grid layout configuration
- */
 export const cardGridConfig = {
   bottomMargin: {
     base: "mb-10",        // 40px - mobile spacing
@@ -150,17 +119,11 @@ export const cardGridConfig = {
   },
 } as const;
 
-/**
- * Card container configuration
- */
 export const cardContainerConfig = {
   baseClasses: "group flex flex-col animate-fade-in transition-all duration-300 ease-out",
   skeletonClasses: "role-presentation aria-hidden-true",
 } as const;
 
-/**
- * Utility function to combine responsive classes
- */
 export function combineResponsiveClasses(
   base: string,
   sm?: string,
@@ -171,9 +134,6 @@ export function combineResponsiveClasses(
   return [base, sm, md, tablet, xl].filter(Boolean).join(" ");
 }
 
-/**
- * Get headline margin top classes
- */
 export function getHeadlineMarginTop(): string {
   return combineResponsiveClasses(
     cardHeadlineConfig.marginTop.base,
@@ -183,9 +143,6 @@ export function getHeadlineMarginTop(): string {
   );
 }
 
-/**
- * Get headline font size classes
- */
 export function getHeadlineFontSize(): string {
   return combineResponsiveClasses(
     cardHeadlineConfig.fontSize.base,
@@ -196,21 +153,16 @@ export function getHeadlineFontSize(): string {
   );
 }
 
-/**
- * Get link margin top classes
- */
 export function getLinkMarginTop(): string {
   return combineResponsiveClasses(
     cardLinkConfig.marginTop.base,
     cardLinkConfig.marginTop.sm,
     cardLinkConfig.marginTop.md,
-    cardLinkConfig.marginTop.tablet
+    cardLinkConfig.marginTop.tablet,
+    cardLinkConfig.marginTop.xl
   );
 }
 
-/**
- * Get link container height classes
- */
 export function getLinkContainerHeight(): string {
   return combineResponsiveClasses(
     cardLinkConfig.containerHeight.base,
@@ -219,9 +171,6 @@ export function getLinkContainerHeight(): string {
   );
 }
 
-/**
- * Get link gap classes
- */
 export function getLinkGap(): string {
   return combineResponsiveClasses(
     cardLinkConfig.gap.base,
@@ -230,9 +179,6 @@ export function getLinkGap(): string {
   );
 }
 
-/**
- * Get skeleton headline margin top classes
- */
 export function getSkeletonHeadlineMarginTop(): string {
   return combineResponsiveClasses(
     skeletonHeadlineConfig.containerMarginTop.base,
@@ -242,9 +188,6 @@ export function getSkeletonHeadlineMarginTop(): string {
   );
 }
 
-/**
- * Get grid bottom margin classes
- */
 export function getGridBottomMargin(): string {
   return combineResponsiveClasses(
     cardGridConfig.bottomMargin.base,
@@ -255,9 +198,6 @@ export function getGridBottomMargin(): string {
   );
 }
 
-/**
- * Get column span classes for a variant
- */
 export function getColumnSpan(variant: "large" | "medium" | "equal" | "small"): string {
   const spans = cardGridConfig.columnSpans[variant];
   return combineResponsiveClasses(spans.base, undefined, undefined, spans.tablet, spans.xl);

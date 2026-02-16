@@ -2,51 +2,15 @@ import { type ReactNode } from "react";
 import { cn } from "@/lib/utils/cn";
 import { typography } from "@/lib/design-system/tokens";
 
-/**
- * Text Primitive
- * 
- * Accessible text component with responsive typography.
- * Uses design tokens for consistent sizing.
- * 
- * Features:
- * - Semantic HTML (p, span)
- * - Responsive font sizes from tokens
- * - Full accessibility support
- * - Type-safe variants
- */
 export interface TextProps {
   children: ReactNode;
-  /**
-   * HTML element to render
-   */
   as?: "p" | "span" | "div";
-  /**
-   * Size variant (uses design tokens)
-   */
   size?: "xs" | "sm" | "base" | "md" | "lg" | "xl";
-  /**
-   * Font family variant
-   */
   fontFamily?: "sans" | "serif" | "mono";
-  /**
-   * Font weight
-   */
   weight?: "light" | "normal" | "medium" | "semibold" | "bold";
-  /**
-   * Line height
-   */
   lineHeight?: "tight" | "normal" | "relaxed";
-  /**
-   * Letter spacing
-   */
   letterSpacing?: "tight" | "normal" | "wide" | "none";
-  /**
-   * Additional className
-   */
   className?: string;
-  /**
-   * Alignment
-   */
   align?: "left" | "center" | "right" | "justify";
 }
 

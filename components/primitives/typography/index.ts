@@ -1,9 +1,3 @@
-/**
- * Typography Primitives
- * 
- * Accessible text components using design tokens
- */
-
 export { Heading } from "./Heading";
 export { Text } from "./Text";
 

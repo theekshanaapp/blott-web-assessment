@@ -1,40 +1,14 @@
 import { type ReactNode } from "react";
 import { cn } from "@/lib/utils/cn";
 
-/**
- * Stack Primitive
- * 
- * Vertical spacing primitive for consistent layout.
- * Prevents margin collapse issues and ensures consistent spacing.
- * 
- * Why:
- * - Consistent vertical rhythm
- * - No margin collapse
- * - Type-safe spacing values
- * - Composable with other primitives
- */
 export interface StackProps {
   children: ReactNode;
-  /**
-   * Gap between children
-   */
   gap?: "xs" | "sm" | "md" | "lg" | "xl" | "2xl" | "3xl" | "4xl" | "5xl" | "6xl";
-  /**
-   * Horizontal alignment
-   */
   align?: "start" | "center" | "end" | "stretch";
-  /**
-   * Additional className
-   */
   className?: string;
-  /**
-   * HTML element to render
-   */
   as?: "div" | "section" | "nav" | "header" | "footer";
 }
 
-// Token-based gap classes (maps to Tailwind spacing scale)
-// xs=4px(1), sm=8px(2), md=16px(4), lg=24px(6), xl=32px(8), 2xl=48px(12), etc.
 const gapClasses = {
   xs: "gap-1",      // 4px
   sm: "gap-2",      // 8px

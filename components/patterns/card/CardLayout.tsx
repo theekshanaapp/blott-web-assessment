@@ -22,12 +22,6 @@ interface CardLayoutProps {
   isSkeleton?: boolean;
 }
 
-/**
- * CardLayout - Shared layout wrapper
- *
- * Provides the exact same structure for both NewsCard and SkeletonCard.
- * All spacing, sizing, and layout come from cardLayout config.
- */
 export function CardLayout({ children, className, isSkeleton = false }: CardLayoutProps) {
   return (
     <article

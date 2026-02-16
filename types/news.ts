@@ -1,6 +1,3 @@
-/**
- * Raw news item from Finnhub API
- */
 export interface FinnhubNewsItem {
   category: string;
   datetime: number;
@@ -13,9 +10,6 @@ export interface FinnhubNewsItem {
   url: string;
 }
 
-/**
- * Transformed news item for our application
- */
 export interface NewsItem {
   id: number;
   thumbnail: string;
@@ -27,17 +21,11 @@ export interface NewsItem {
   summary?: string;
 }
 
-/**
- * API Response wrapper
- */
 export interface NewsApiResponse {
   data: NewsItem[];
   error: string | null;
 }
 
-/**
- * Component Props Types
- */
 export interface NewsCardProps {
   news: NewsItem;
   priority?: boolean;

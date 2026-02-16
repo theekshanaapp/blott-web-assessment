@@ -16,17 +16,6 @@ import {
   getLinkMarginTop,
 } from "@/lib/config/cardLayout";
 
-/**
- * SkeletonCard Component
- *
- * Uses shared CardLayout to ensure perfect sync with NewsCard.
- * All layout values come from cardLayout config (single source of truth).
- *
- * Architecture:
- * - Same structure as NewsCard via CardLayout
- * - Same spacing via shared config
- * - Cannot diverge from NewsCard layout
- */
 const SkeletonCard = memo(function SkeletonCard({
   variant = "medium",
 }: SkeletonCardProps) {
