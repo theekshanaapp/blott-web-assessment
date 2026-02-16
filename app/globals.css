@@ -2,27 +2,32 @@
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
-  font-family: "Albra";
-  src: url("/fonts/Albra-Light.woff2") format("woff2"),
-       url("/fonts/Albra-Light.woff") format("woff"),
-       url("/fonts/Albra-Light.otf") format("opentype"),
-       url("/fonts/Albra-Light.ttf") format("truetype");
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Albra";
-  src: url("/fonts/Albra-Regular.woff2") format("woff2"),
-       url("/fonts/Albra-Regular.woff") format("woff"),
-       url("/fonts/Albra-Regular.otf") format("opentype"),
-       url("/fonts/Albra-Regular.ttf") format("truetype");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
+/* Albra font declarations - Commented out until font files are provided
+ * Currently using Lora as fallback via next/font in layout.tsx
+ * To use Albra fonts, add the font files to /public/fonts/ and uncomment below:
+ *
+ * @font-face {
+ *   font-family: "Albra";
+ *   src: url("/fonts/Albra-Light.woff2") format("woff2"),
+ *        url("/fonts/Albra-Light.woff") format("woff"),
+ *        url("/fonts/Albra-Light.otf") format("opentype"),
+ *        url("/fonts/Albra-Light.ttf") format("truetype");
+ *   font-weight: 300;
+ *   font-style: normal;
+ *   font-display: swap;
+ * }
+ *
+ * @font-face {
+ *   font-family: "Albra";
+ *   src: url("/fonts/Albra-Regular.woff2") format("woff2"),
+ *        url("/fonts/Albra-Regular.woff") format("woff"),
+ *        url("/fonts/Albra-Regular.otf") format("opentype"),
+ *        url("/fonts/Albra-Regular.ttf") format("truetype");
+ *   font-weight: 400;
+ *   font-style: normal;
+ *   font-display: swap;
+ * }
+ */
 
 @layer base {
   :root {

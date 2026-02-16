@@ -8,7 +8,7 @@ function transformNewsItem(item: FinnhubNewsItem): NewsItem {
     id: item.id,
     thumbnail: item.image || "",
     source: item.source || "Unknown",
-    datetime: item.datetime * 1000, // Convert Unix timestamp to milliseconds
+    datetime: item.datetime * 1000,
     headline: item.headline || "",
     url: item.url || "",
     category: item.category,

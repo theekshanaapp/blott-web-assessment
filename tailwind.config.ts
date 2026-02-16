@@ -25,7 +25,6 @@ const config: Config = {
         "text-muted": colors.text.muted,
         "border-default": colors.border.default,
         "border-light": colors.border.light,
-        // Legacy support
         background: {
           main: colors.background.main,
           secondary: colors.background.secondary,
@@ -41,7 +40,6 @@ const config: Config = {
         },
       },
       spacing: {
-        // Token-based spacing (4px base unit)
         xs: spacing.xs,
         sm: spacing.sm,
         md: spacing.md,
@@ -52,7 +50,6 @@ const config: Config = {
         "4xl": spacing["4xl"],
         "5xl": spacing["5xl"],
         "6xl": spacing["6xl"],
-        // Tailwind numeric scale for compatibility (maps to tokens)
         1: "4px",   // xs
         2: "8px",   // sm
         4: "16px",  // md
@@ -63,12 +60,10 @@ const config: Config = {
         20: "80px", // 4xl
         32: "128px", // 5xl
         44: "176px", // 6xl
-        // Additional Figma-specific layout values
         60: "60px",  // Container padding at xl breakpoint
         24: "24px",  // Alias for lg
       },
       fontSize: {
-        // Token-based typography
         xs: typography.fontSize.xs,
         sm: typography.fontSize.sm,
         base: typography.fontSize.base,
@@ -79,7 +74,7 @@ const config: Config = {
         "3xl": typography.fontSize["3xl"],
         "4xl": typography.fontSize["4xl"],
         "5xl": typography.fontSize["5xl"],
-        // Numeric scale for compatibility
+
         14: typography.fontSize.xs,
         15: typography.fontSize.sm,
         18: typography.fontSize.base,
@@ -96,7 +91,7 @@ const config: Config = {
         tight: typography.lineHeight.tight,
         normal: typography.lineHeight.normal,
         relaxed: typography.lineHeight.relaxed,
-        // Custom line heights
+
         mobile: typography.lineHeight.custom.mobile,
         desktop: typography.lineHeight.custom.desktop,
       },
@@ -149,13 +144,12 @@ const config: Config = {
   plugins: [],
   darkMode: "class",
   safelist: [
-    // Ensure desktop and tablet column spans are generated
     "xl:col-span-6",
     "xl:col-span-3",
     "tablet:col-span-6",
     "tablet:col-span-3",
     "tablet:col-span-4",
-    // Ensure spacing classes are generated for card layout
+
     "mt-2",
     "sm:mt-3",
     "md:mt-4",

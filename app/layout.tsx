@@ -16,8 +16,6 @@ const roboto = Roboto({
   display: "swap",
 });
 
-// Albra font - using Lora variable for serif font with weight 300 support
-// Lora has a similar elegant R shape to Albra
 const albra = Lora({
   weight: "variable",
   subsets: ["latin"],

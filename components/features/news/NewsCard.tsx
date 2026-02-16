@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { memo, useState } from "react";
+import { memo, useState, useEffect, useRef } from "react";
 import type { NewsCardProps } from "@/types/news";
 import { sanitizeUrl } from "@/lib/utils/format";
 import { cn } from "@/lib/utils/cn";
@@ -14,6 +14,7 @@ import {
 import { cardImageConfig, cardLinkConfig } from "@/lib/config/cardLayout";
 
 const PLACEHOLDER_IMAGE = "/placeholder-image.png";
+const IMAGE_LOAD_TIMEOUT = 10000; // 10 seconds timeout
 
 const NewsCard = memo(function NewsCard({
   news,
@@ -21,6 +22,7 @@ const NewsCard = memo(function NewsCard({
 }: NewsCardProps) {
   const [imageError, setImageError] = useState(false);
   const [imageLoading, setImageLoading] = useState(true);
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   const hasValidImage = news.thumbnail &&
     news.thumbnail.trim() !== "" &&
@@ -36,6 +38,24 @@ const NewsCard = memo(function NewsCard({
         : news.thumbnail)
     : PLACEHOLDER_IMAGE;
   const articleUrl = sanitizeUrl(news.url);
+
+  // Handle image load timeout
+  useEffect(() => {
+    if (imageUrl !== PLACEHOLDER_IMAGE && imageLoading && !imageError) {
+      timeoutRef.current = setTimeout(() => {
+        if (imageLoading) {
+          setImageError(true);
+          setImageLoading(false);
+        }
+      }, IMAGE_LOAD_TIMEOUT);
+    }
+
+    return () => {
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+      }
+    };
+  }, [imageUrl, imageLoading, imageError]);
 
   return (
     <CardLayout>
@@ -58,10 +78,16 @@ const NewsCard = memo(function NewsCard({
               loading={priority ? undefined : "lazy"}
               unoptimized={imageUrl === PLACEHOLDER_IMAGE || imageError}
               onLoad={() => {
+                if (timeoutRef.current) {
+                  clearTimeout(timeoutRef.current);
+                }
                 setImageLoading(false);
                 setImageError(false);
               }}
               onError={() => {
+                if (timeoutRef.current) {
+                  clearTimeout(timeoutRef.current);
+                }
                 setImageError(true);
                 setImageLoading(false);
               }}
