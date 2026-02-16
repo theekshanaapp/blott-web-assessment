@@ -413,12 +413,6 @@ See `.github/workflows/test.yml` for the complete CI/CD configuration.
 
 ---
 
-## 📝 License
-
-This project is private and proprietary.
-
----
-
 ## 👨‍💻 Author
 
 **Harendra Theekshana**
