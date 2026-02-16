@@ -172,10 +172,4 @@ npm run start
 
 ---
 
-## 📄 License
-
-Private & proprietary
-
----
-
-Built with ❤️ using **Next.js**, **TypeScript**, **Tailwind CSS**, and **Finnhub API**
+Built with Harendra Theekshana using **Next.js**, **TypeScript**, **Tailwind CSS**, and **Finnhub API**
